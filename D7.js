@@ -27,37 +27,39 @@ console.log(numArray)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
 console.log('Exercise:', exercise++)
-const even = numArray.filter((num) => num % 2 === 0)
-console.log(even)
+
+const even = (array) => numArray.filter((num) => num % 2 === 0)
+console.log(even(numArray))
 //done/test/OK
 
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 console.log('Exercise:', exercise++)
-let sum4 = 0
-numArray.forEach((num) => {
-  sum4 += num
-})
-console.log(sum4)
+const functionSum4 = (array) => {
+  let sum4 = 0
+  numArray.forEach((num) => {
+    sum4 += num
+  })
+  return sum4
+}
+console.log(functionSum4(numArray))
 //done/test/OK
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 console.log('Exercise:', exercise++)
-const sum5 = numArray.reduce((acc, num) => {
-  return acc + num
-}, 0)
-console.log(sum5)
+const functionSum5 = (array) => array.reduce((acc, num) => acc + num, 0)
+console.log(functionSum5(numArray))
 //done/test/OK
 
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
 console.log('Exercise:', exercise++)
-numArrayPlus1 = numArray.map((num) => num + 1)
-console.log(numArrayPlus1)
+const incrementArray = (array) => array.map((num) => num + 1)
+console.log(incrementArray(numArray))
 //done/test/OK
 
 /* ESERCIZIO 7 (map)
@@ -74,8 +76,8 @@ stringsArray7 = [
   'zimbello',
   'ritorno',
 ]
-lengthArray7 = stringsArray7.map((str) => str.length)
-console.log(lengthArray7)
+lengthArray7 = (array) => array.map((str) => str.length)
+console.log(lengthArray7(stringsArray7))
 //done/test/OK
 
 /* ESERCIZIO 8 (forEach o for)
@@ -86,10 +88,9 @@ console.log('Exercise:', exercise++)
 // https://stackoverflow.com/questions/3895478/does-javascript-have-a-method-like-range-to-generate-a-range-within-the-supp
 // MDN:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
-const range = (start, stop, step) =>
+const numemberTo99 = (start, stop, step) =>
   Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + i * step)
-const numemberTo99 = range(1, 99, 2)
-console.log(numemberTo99)
+console.log(numemberTo99(1, 99, 2))
 // Figata! Se tolgo le parentesi alla funzione mi restituisce il codice1
 // console.log(range)
 //done/test/OK
@@ -229,26 +230,29 @@ console.log(findOldestFilm(movies))
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
 console.log('Exercise:', exercise++)
-const numberOfMovies = movies.reduce((acc, movie) => acc + 1, 0)
-console.log(numberOfMovies)
+const numberOfMovies = (movies) => {
+  return movies.reduce((acc, movie) => acc + 1, 0)
+}
+console.log(numberOfMovies(movies))
 //done/test/OK
 
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
 console.log('Exercise:', exercise++)
-const moviesTitles = movies.map((movie) => movie.Title)
-console.log(moviesTitles)
+const moviesTitles = (movies) => {
+  return movies.map((movie) => movie.Title)
+}
+console.log(moviesTitles(movies))
 //done/test/OK
 
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
 console.log('Exercise:', exercise++)
-const moviesOfTheMillennium = movies.filter(
-  (movie) => movie.Year.slice(0, 1) === '2'
-)
-console.log(moviesOfTheMillennium)
+const moviesOfTheMillennium = (movies) =>
+  movies.filter((movie) => movie.Year.slice(0, 1) === '2')
+console.log(moviesOfTheMillennium(movies))
 //done/test/OK
 
 /* ESERCIZIO 13 (reduce)
