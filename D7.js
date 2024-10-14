@@ -230,9 +230,7 @@ console.log(findOldestFilm(movies))
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
 console.log('Exercise:', exercise++)
-const numberOfMovies = (movies) => {
-  return movies.reduce((acc, movie) => acc + 1, 0)
-}
+const numberOfMovies = (movies) => movies.reduce((acc, movie) => acc + 1, 0)
 console.log(numberOfMovies(movies))
 //done/test/OK
 
@@ -240,9 +238,7 @@ console.log(numberOfMovies(movies))
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
 console.log('Exercise:', exercise++)
-const moviesTitles = (movies) => {
-  return movies.map((movie) => movie.Title)
-}
+const moviesTitles = (movies) => movies.map((movie) => movie.Title)
 console.log(moviesTitles(movies))
 //done/test/OK
 
@@ -268,9 +264,7 @@ console.log(sumOfYears(movies))
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
 console.log('Exercise:', exercise++)
-const searchImdbID = (imdbID) => {
-  return movies.find((movie) => movie.imdbID === imdbID)
-}
+const searchImdbID = (imdbID) => movies.find((movie) => movie.imdbID === imdbID)
 console.log(searchImdbID('tt0848228'))
 //done/test/OK
 
