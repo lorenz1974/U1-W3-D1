@@ -272,8 +272,6 @@ console.log(searchImdbID('tt0848228'))
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
 console.log('Exercise:', exercise++)
-const searchYear = (year) => {
-  return movies.findIndex((movie) => movie.Year === year)
-}
+const searchYear = (year) => movies.findIndex((movie) => movie.Year === year)
 console.log(searchYear('2012')) // gli ID partono da 0!!!
 //done/test/OK
