@@ -259,8 +259,9 @@ console.log(moviesOfTheMillennium(movies))
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
 console.log('Exercise:', exercise++)
-const sumOfYears = movies.reduce((acc, movie) => acc + parseInt(movie.Year), 0)
-console.log(sumOfYears)
+const sumOfYears = (movies) =>
+  movies.reduce((acc, movie) => acc + parseInt(movie.Year), 0)
+console.log(sumOfYears(movies))
 //done/test/OK
 
 /* ESERCIZIO 14 (find)
